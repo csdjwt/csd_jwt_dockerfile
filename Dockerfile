@@ -18,12 +18,6 @@ RUN echo "Installed pandas, matplotlib, numpy."
 
 WORKDIR /csd_jwt
 
-# Install the application dependencies
-# COPY requirements.txt ./
-# RUN python -m venv venv
-# RUN source venv/bin/activate
-
-###  RUN pip install --upgrade --no-cache-dir --break-system-packages pip setuptools wheel
 RUN echo "Building a --release version of the rust code..."
 RUN cargo build --release >/dev/null 2>&1 
 RUN echo "Code successfully compiled."
